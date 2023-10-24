@@ -22,7 +22,8 @@ Route::get('/gg', function () {
 
     return view('test', ['planets' => $planets]);
 });
-
+Route::get('/planets', 'PlanetController@index');
+Route::get('/planets/{planet}', 'PlanetController@show');
 Route::get('/planets', function () {
 
     $planets = [
