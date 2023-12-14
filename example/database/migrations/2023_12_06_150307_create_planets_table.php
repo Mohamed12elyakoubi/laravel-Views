@@ -9,13 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('planets', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->integer('size_in_km');
+            $table->bigInteger('solar_system_id')->unsigned();
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
