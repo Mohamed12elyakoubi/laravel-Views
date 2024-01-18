@@ -11,13 +11,16 @@ class PlanetController extends Controller
 {
     public function index()
     {
-        $planets = Planet::all();
+        // Gebruik de scope om eager loading toe te passen
+        $planets = Planet::withSolarSystem()->get();
+
         return view('planets.index', ['planets' => $planets]);
     }
 
     public function show($planet)
     {
-        $selectedPlanet = Planet::where('name', $planet)->first();
+        // Gebruik de scope om eager loading toe te passen
+        $selectedPlanet = Planet::withSolarSystem()->where('name', $planet)->first();
 
         if ($selectedPlanet) {
             return view('planets.show', ['planet' => $selectedPlanet]);

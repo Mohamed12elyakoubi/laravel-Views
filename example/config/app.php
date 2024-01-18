@@ -168,6 +168,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Laravel\Telescope\TelescopeServiceProvider::class,
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        \Clockwork\Support\Laravel\ClockworkMiddleware::class,
+
+
     ])->toArray(),
 
     /*
